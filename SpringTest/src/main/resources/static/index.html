@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Index</title>
 </head>
 <body>
- hello
+    <h1>Hello World!</h1>
+    <div id="contents">
+    </div>
+    <script>
+        const content = document.getElementById("contents");
+        axios.get("testValue")
+        .then((data)=> {
+            console.log(data);
+            console.log(content);
+            content.innerText = data.data;
+        }).catch((error)=> {
+            console.log(error);
+        })
+    </script>
 </body>
 </html>
